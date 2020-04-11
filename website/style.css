@@ -18,11 +18,25 @@
 }
 
 input,
-button {
+button,
+textarea {
   display: block;
   margin: 1rem auto;
   width: 90%;
   padding: 0.75rem;
+  border: 1px solid white;
+  outline: none !important;
+}
+
+input:focus,
+textarea:focus {
+  color: var(--primary-color);
+  background: var(--background-color);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: white;
 }
 
 button {
@@ -30,6 +44,13 @@ button {
   background: var(--primary-color);
   color: var(--background-color);
   cursor: pointer;
+  transition: all 0.3s ease-in;
+  border: 1px solid white;
+}
+
+button:hover {
+  color: var(--primary-color);
+  background: var(--background-color);
 }
 
 h2,
@@ -76,23 +97,36 @@ body {
 
 /* Weather section */
 
-#weather {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+#form,
+#history {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#weather #form {
+#form {
+  top: 10rem;
+}
+
+#history {
+  top: 45rem;
+}
+
+.container {
   text-align: center;
   width: 50%;
+  max-width: 50rem;
   background: var(--background-color);
   border: 0.5px solid var(--primary-color);
   border-radius: 0.5px;
   padding: 1.5rem 1rem;
+  margin: 3rem 0;
+  color: var(--primary-color);
 }
 
-#weather #form:hover {
+.container:hover {
   box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25),
     0 10px 10px rgba(255, 255, 255, 0.22);
 }
